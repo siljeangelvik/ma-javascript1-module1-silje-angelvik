@@ -70,14 +70,14 @@ console.log("QUESTION 8");
 
 function createCats(cats) {
     cats.forEach((cat) => {
-        let catBox = document.createElement("div");
-        catBox.innerHTML = `<h5> ${cat.name}</h5>`;
-        catBox.innerHTML = `<p> ${cat.age}</p>`;
+        let cats = document.createElement("div");
+        cats.innerHTML = `<h5> ${cat.name}</h5>`;
+        cats.innerHTML = `<p> ${cat.age}</p>`;
 
         if (onload) {
-            catBox.innerHTML = `<p>${cat.age}: Unknown</p>`;
+            cats.innerHTML = `<p>${cat.age}: Unknown</p>`;
         }
-        return catBox.innerHTML;
+        return cats.innerHTML;
     })
 }
 
