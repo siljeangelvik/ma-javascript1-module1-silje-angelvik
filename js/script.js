@@ -70,17 +70,21 @@ console.log("QUESTION 8");
 
 function createCats(cats) {
     cats.forEach((cat) => {
-        let cats = document.createElement("div");
-        cats.innerHTML = `<h5> ${cat.name}</h5>`;
-        cats.innerHTML = `<p> ${cat.age}</p>`;
+        const catContainer = document.getElementsByClassName('cat-container')[0];
+        const catNameElement = document.createElement('h5');
+        const catAgeElement = document.createElement('p');
 
-        if (onload) {
-            cats.innerHTML = `<p>${cat.age}: Unknown</p>`;
+        if (cat.age) {
+            catAgeElement.innerHTML = cat.age;
+        } else {
+            catAgeElement.innerHTML = 'Age unknown';
         }
-        return cats.innerHTML;
+
+        catNameElement.innerHTML = cat.name;
+
+        catContainer.appendChild(catNameElement);
+        catContainer.appendChild(catAgeElement);
     })
 }
 
 createCats(cats);
-document.getElementsByClassName("cat-container")[0].innerHTML = createCats;
-console.log(cats);
